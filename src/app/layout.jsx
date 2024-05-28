@@ -1,7 +1,10 @@
+import { Suspense } from 'react';
+
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
+import Loading from './loading';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +22,7 @@ export default function RootLayout({ children }) {
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange>
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </ThemeProvider>
       </body>
     </html>
