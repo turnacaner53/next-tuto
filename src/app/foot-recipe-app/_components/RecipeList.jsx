@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Card, CardContent, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 
 export default async function RecipeList({ recipes }) {
   return (
@@ -17,8 +17,8 @@ export default async function RecipeList({ recipes }) {
                     <Image
                       src={recipe.image}
                       alt={recipe.name}
-                      width={400}
-                      height={400}
+                      width={500}
+                      height={500}
                       style={{ objectFit: 'cover' }}
                       className=' rounded-md  '
                     />
@@ -28,11 +28,7 @@ export default async function RecipeList({ recipes }) {
                       </CardTitle>
                       <div className='mt-4 flex flex-wrap items-center gap-2'>
                         <p className='text-md text-muted-foreground'>Rating: {recipe.rating}</p>
-                        <div className='ml-auto'>
-                          <p className='text-md font-bold text-muted-foreground'>
-                            {recipe.cuisine}
-                          </p>
-                        </div>
+                        <p className='text-md font-bold text-muted-foreground'>{recipe.cuisine}</p>
                       </div>
                     </div>
                   </div>
