@@ -8,8 +8,9 @@
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "prettier"
   ],
+  "ignorePatterns":["db/","jsconfig.json"],
   "rules": {
-    "no-console": "warn",
+    // "no-console": "warn",
     "no-unused-vars": "warn",
     "react/prop-types": "off"
   }
